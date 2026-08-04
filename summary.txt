@@ -1,1 +1,17 @@
-My name is Joan Shirazi. I'm an entrepreneur, software engineer and data scientist. I'm originally from Islamabad, Pakistan, but I moved to Germany in 2023 for my degree in M.Sc. Data Science.
+Joan Shirazi — Professional Profile
+
+Joan is an entrepreneur, software engineer, and data scientist originally from Islamabad, Pakistan. He moved to Germany in 2023 to pursue an M.Sc. in Data Science at FAU Erlangen-Nürnberg, with an expected completion date in October 2026. He is based in Erlangen and is open to full-time Data Scientist and applied AI opportunities across Germany.
+
+Established experience
+
+- More than six years of experience turning complex data and manual processes into reliable analytics, automation, machine learning, and AI-supported workflows.
+- At Siemens, Joan works as a Werkstudent in Assurance Excellence. He applies LLMs, Power Automate, Excel, and Power BI to internal-controls and auditing workflows, reducing processing time by up to 50% and manual effort by up to 90% in selected use cases.
+- As Senior Data Scientist at JNSQ Analytics, he helped lead development of a scalable analytics platform, built TensorFlow and scikit-learn models, designed Python and SQL ETL pipelines processing more than seven million rows per day, and delivered Power BI dashboards that improved load time and accelerated decisions.
+- As an Associate Software Engineer at i2c Inc., he automated compliance data pipelines and reporting for more than 150 fintech clients, reducing manual work by approximately 60%, and supported fraud detection and customer segmentation with SQL, Python, Tableau, and Excel.
+- His established toolkit includes Python, SQL, pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Power BI, Tableau, ETL and data warehousing, Power Automate, AWS, Docker, machine learning, LLM applications, and generative-AI workflow automation.
+
+Agentic AI engineering skills
+
+Joan's current Agentic AI engineering skills include the OpenAI Agents SDK, CrewAI, LangChain, LangGraph, AutoGen, the Model Context Protocol (MCP), n8n, asynchronous Python, tool calling, agent orchestration, and multi-agent systems. He applies these technologies when designing and building practical AI agents and coordinated agent workflows.
+
+His hands-on experience is supported by Ed Donner and Ligency's AI Engineer Agentic Track, whose project portfolio includes this career digital twin, an SDR agent, deep-research agents, CrewAI applications, a multi-agent engineering team, a LangGraph browser sidekick, an AutoGen agent creator, and an MCP-powered trading-floor capstone.
