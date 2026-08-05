@@ -26,7 +26,7 @@ class FakeClient:
 
 def configured_settings():
     return app.GroqSettings(
-        model="llama-3.1-8b-instant",
+        model="openai/gpt-oss-120b",
         api_key="test-key",
     )
 
@@ -40,7 +40,7 @@ def test_groq_is_the_only_configuration():
             "OPENAI_API_KEY": "paid-key",
         }
     )
-    assert settings.model == "llama-3.1-8b-instant"
+    assert settings.model == "openai/gpt-oss-120b"
 
     with pytest.raises(app.ConfigurationError, match="GROQ_API_KEY"):
         app.get_groq_settings({})
@@ -76,8 +76,10 @@ def test_chat_returns_provider_response(monkeypatch):
     result = app.chat("What is your background?", [])
 
     assert result == "**Professional answer**"
-    assert completions.kwargs["model"] == "llama-3.1-8b-instant"
+    assert completions.kwargs["model"] == "openai/gpt-oss-120b"
     assert completions.kwargs["max_completion_tokens"] == app.MAX_COMPLETION_TOKENS
+    assert completions.kwargs["reasoning_effort"] == "low"
+    assert completions.kwargs["reasoning_format"] == "hidden"
     assert "tools" not in completions.kwargs
 
 
@@ -109,6 +111,51 @@ def test_chat_returns_clear_connection_message(monkeypatch):
     )
 
     assert app.chat("Hello", []) == app.UNAVAILABLE_MESSAGE
+
+
+def test_chat_returns_clear_timeout_message(monkeypatch):
+    class FakeTimeoutError(Exception):
+        pass
+
+    monkeypatch.setattr(app, "APITimeoutError", FakeTimeoutError)
+    monkeypatch.setattr(app, "get_groq_settings", configured_settings)
+    monkeypatch.setattr(
+        app,
+        "get_client",
+        lambda settings: FakeClient(FakeCompletions(error=FakeTimeoutError())),
+    )
+
+    assert app.chat("Hello", []) == app.UNAVAILABLE_MESSAGE
+
+
+def test_chat_returns_clear_authentication_message(monkeypatch):
+    class FakeAuthenticationError(Exception):
+        pass
+
+    monkeypatch.setattr(app, "AuthenticationError", FakeAuthenticationError)
+    monkeypatch.setattr(app, "get_groq_settings", configured_settings)
+    monkeypatch.setattr(
+        app,
+        "get_client",
+        lambda settings: FakeClient(FakeCompletions(error=FakeAuthenticationError())),
+    )
+
+    assert app.chat("Hello", []) == app.AUTH_MESSAGE
+
+
+def test_chat_returns_clear_model_access_message(monkeypatch):
+    class FakePermissionError(Exception):
+        pass
+
+    monkeypatch.setattr(app, "PermissionDeniedError", FakePermissionError)
+    monkeypatch.setattr(app, "get_groq_settings", configured_settings)
+    monkeypatch.setattr(
+        app,
+        "get_client",
+        lambda settings: FakeClient(FakeCompletions(error=FakePermissionError())),
+    )
+
+    assert app.chat("Hello", []) == app.MODEL_ACCESS_MESSAGE
 
 
 def test_chat_returns_configuration_message_without_a_key(monkeypatch):

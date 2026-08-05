@@ -3,6 +3,11 @@
 .env.*
 !.env.example
 
+# Private profile source documents (curate facts into summary.txt instead)
+*[Rr]esume*.pdf
+*[Tt]hesis*.pdf
+private-profile/
+
 # Python
 __pycache__/
 *.py[cod]

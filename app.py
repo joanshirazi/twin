@@ -15,6 +15,8 @@ from groq import (
     APITimeoutError,
     AuthenticationError,
     Groq,
+    NotFoundError,
+    PermissionDeniedError,
     RateLimitError,
 )
 
@@ -25,10 +27,12 @@ load_dotenv(override=False)
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "llama-3.1-8b-instant"
+DEFAULT_MODEL = "openai/gpt-oss-120b"
 MAX_HISTORY_MESSAGES = 4
 MAX_MESSAGE_CHARACTERS = 2_000
-MAX_COMPLETION_TOKENS = 350
+MAX_COMPLETION_TOKENS = 500
+REASONING_EFFORT = "low"
+REASONING_FORMAT = "hidden"
 
 RATE_LIMIT_MESSAGE = (
     "I'm receiving more requests than the free Groq service currently allows. "
@@ -37,6 +41,10 @@ RATE_LIMIT_MESSAGE = (
 AUTH_MESSAGE = (
     "The digital twin is temporarily unavailable because its Groq service is not "
     "configured correctly. Please contact Joan using the links below."
+)
+MODEL_ACCESS_MESSAGE = (
+    "The digital twin's Groq model is temporarily unavailable or not enabled for "
+    "this project. Please contact Joan using the links below."
 )
 UNAVAILABLE_MESSAGE = (
     "I couldn't reach the Groq service just now. Please try again shortly, or contact "
@@ -119,6 +127,8 @@ def chat(message: str, history: list[dict[str, Any]] | None) -> str:
             model=settings.model,
             messages=build_messages(message, history),
             max_completion_tokens=MAX_COMPLETION_TOKENS,
+            reasoning_effort=REASONING_EFFORT,
+            reasoning_format=REASONING_FORMAT,
         )
         content = response.choices[0].message.content
         return content.strip() if content else UNAVAILABLE_MESSAGE
@@ -131,6 +141,9 @@ def chat(message: str, history: list[dict[str, Any]] | None) -> str:
     except AuthenticationError:
         logger.exception("Groq authentication failed")
         return AUTH_MESSAGE
+    except (PermissionDeniedError, NotFoundError):
+        logger.exception("Groq model access failed")
+        return MODEL_ACCESS_MESSAGE
     except (APITimeoutError, APIConnectionError):
         logger.warning("Groq connection failed", exc_info=True)
         return UNAVAILABLE_MESSAGE
@@ -163,7 +176,7 @@ def build_demo() -> gr.Blocks:
                 elem_id="twin-chatbot",
             )
             textbox = gr.Textbox(
-                placeholder="Ask about Joan's experience or current Agentic AI work...",
+                placeholder="Ask about Joan's AI career, projects, skills, or thesis...",
                 container=False,
                 lines=1,
                 max_lines=4,
@@ -177,8 +190,9 @@ def build_demo() -> gr.Blocks:
                 examples=EXAMPLES,
                 example_labels=[
                     "Career overview",
-                    "Agentic AI skills",
-                    "Technical strengths",
+                    "Head of AI",
+                    "Master's thesis",
+                    "Completed projects",
                     "Contact Joan",
                 ],
                 run_examples_on_click=True,
