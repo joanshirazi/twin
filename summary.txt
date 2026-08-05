@@ -1,17 +1,49 @@
-Joan Shirazi — Professional Profile
+Joan Shirazi — Curated Professional Profile
 
-Joan is an entrepreneur, software engineer, and data scientist originally from Islamabad, Pakistan. He moved to Germany in 2023 to pursue an M.Sc. in Data Science at FAU Erlangen-Nürnberg, with an expected completion date in October 2026. He is based in Erlangen and is open to full-time Data Scientist and applied AI opportunities across Germany.
+Positioning and availability
 
-Established experience
+Joan is an AI Engineer and Data Scientist with more than five years of experience building LLM-powered automation, machine-learning systems, production data pipelines, analytics products, and grounded AI applications. He is based in Erlangen, Germany, and is open to full-time AI Engineer, Applied AI, and Data Scientist opportunities across Germany. He combines hands-on software and data engineering with experience translating complex requirements into reliable systems for business users.
 
-- More than six years of experience turning complex data and manual processes into reliable analytics, automation, machine learning, and AI-supported workflows.
-- At Siemens, Joan works as a Werkstudent in Assurance Excellence. He applies LLMs, Power Automate, Excel, and Power BI to internal-controls and auditing workflows, reducing processing time by up to 50% and manual effort by up to 90% in selected use cases.
-- As Senior Data Scientist at JNSQ Analytics, he helped lead development of a scalable analytics platform, built TensorFlow and scikit-learn models, designed Python and SQL ETL pipelines processing more than seven million rows per day, and delivered Power BI dashboards that improved load time and accelerated decisions.
-- As an Associate Software Engineer at i2c Inc., he automated compliance data pipelines and reporting for more than 150 fintech clients, reducing manual work by approximately 60%, and supported fraud detection and customer segmentation with SQL, Python, Tableau, and Excel.
-- His established toolkit includes Python, SQL, pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Power BI, Tableau, ETL and data warehousing, Power Automate, AWS, Docker, machine learning, LLM applications, and generative-AI workflow automation.
+Professional experience
 
-Agentic AI engineering skills
+- Siemens Financial Services (SFS), Working Student — AI & Controls Analytics, October 2025 to current, Munich, Germany. Joan builds LLM-assisted controls and audit workflows that have reduced processing time by up to 50% and manual effort by up to 90% in selected use cases. He applies quantitative analysis, validates AI outputs, identifies exceptions, and helps ensure results are traceable and reliable.
+- Remotoco, Head of AI — Talent Matching Systems, January 2023 to March 2025, Barcelona, Spain. Joan built a proprietary AI engine that matched and ranked candidates against job requirements using skills, experience, seniority, and role-specific criteria. He also developed detailed candidate skill trees and fit explanations to support transparent and consistent recruiter shortlisting.
+- JNSQ Analytics, Senior Data Scientist — ML & Data Engineering, February 2021 to March 2023, Islamabad, Pakistan. Joan developed TensorFlow and scikit-learn models for player and team performance analysis. He built Python and SQL ETL and feature pipelines processing more than seven million rows daily and delivered Power BI dashboards for KPI monitoring.
+- i2c Inc., Associate Software Engineer — Data & Automation, July 2020 to February 2021, Lahore, Pakistan. Joan automated SQL and ETL compliance reporting for more than 150 fintech clients, reducing manual processing by approximately 60%. He developed Python and SQL analytics for fraud detection, segmentation, forecasting, and financial reporting.
 
-Joan's current Agentic AI engineering skills include the OpenAI Agents SDK, CrewAI, LangChain, LangGraph, AutoGen, the Model Context Protocol (MCP), n8n, asynchronous Python, tool calling, agent orchestration, and multi-agent systems. He applies these technologies when designing and building practical AI agents and coordinated agent workflows.
+Education
 
-His hands-on experience is supported by Ed Donner and Ligency's AI Engineer Agentic Track, whose project portfolio includes this career digital twin, an SDR agent, deep-research agents, CrewAI applications, a multi-agent engineering team, a LangGraph browser sidekick, an AutoGen agent creator, and an MCP-powered trading-floor capstone.
+- M.Sc. Data Science, FAU Erlangen-Nürnberg, 2023 to 2026, Erlangen, Germany. The degree is active and expected to be completed in 2026.
+- B.Sc. Computer Science, FAST National University of Computer and Emerging Sciences, 2016 to 2020, Islamabad, Pakistan.
+
+Active master's thesis
+
+Joan's active master's thesis is titled “AI-assisted Analysis and Explanation of Optimization Models.” It investigates how AI-assisted methods can help non-expert users understand existing mathematical optimization models and solver results. The starting point is an available MILP or MINLP model, not automatic model generation.
+
+The research covers explanations of variables, constraint groups, solutions, objective-function trade-offs, binding constraints, infeasibility and irreducible infeasible subsystems (IIS), reduced costs, dual information where available, sensitivity to data changes, and differences between alternative solutions. Its central requirement is that natural-language explanations remain grounded in verifiable model and solver information rather than plausible but unsupported statements.
+
+The research plan includes a literature review, a taxonomy of explanation tasks, a prototype for different user groups, grounding explanations in solver evidence, and evaluation on representative MILP or MINLP models for correctness, usefulness, and misleading-statement risk. These are active or planned thesis objectives, not confirmed milestones. Joan has not claimed that the literature review, taxonomy, prototype, evaluation, findings, or final results are complete.
+
+Agentic AI and LLM engineering skills
+
+Joan's current skills include the OpenAI API and Agents SDK, CrewAI, LangChain, LangGraph, AutoGen, n8n, the Model Context Protocol (MCP), FastMCP, asynchronous Python, tool calling, agent orchestration, multi-agent systems, prompt engineering, retrieval-augmented generation (RAG), embeddings, and Qdrant. He applies these technologies to grounded assistants, workflow automation, API orchestration, and human-in-the-loop systems.
+
+Technical skills
+
+- Machine learning and data science: Python, SQL, scikit-learn, PyTorch, TensorFlow/Keras, pandas, NumPy, feature engineering, forecasting, and model evaluation.
+- Software and API engineering: Python, SQL, C#, TypeScript, Flask, REST APIs, Git, GitHub Actions, and PyTest.
+- Data, cloud, and automation: ETL/ELT, data warehousing, PostgreSQL, Redis, Kafka, Power Automate, Power BI, AWS, and Docker.
+
+Completed featured projects
+
+- Digital Twin — AI Digital Twin. Joan built this employer-facing Gradio and Groq assistant around curated professional knowledge. It uses bounded context, explicit status and hallucination controls, privacy safeguards, API error handling, mocked model tests, and GitHub CI. It does not collect visitor contact details or load private resume and thesis documents at runtime.
+- n8n Stock Portfolio Assistant. Joan built a tool-using portfolio agent with n8n, OpenAI, Marketstack, and Google Sheets. It integrates conversational memory, market-data APIs, structured spreadsheet operations, and explicit human approval before any write operation.
+
+Additional Agentic AI project work
+
+Joan's Agentic AI engineering course work has given him hands-on exposure to SDR agents, deep-research agents, CrewAI applications, multi-agent engineering workflows, a LangGraph browser sidekick, an AutoGen agent creator, and an MCP-powered trading-floor capstone. These are course-based project exercises and should not be described as completed featured portfolio projects unless Joan confirms completion separately.
+
+Languages
+
+- English: C1.
+- German: A2.
